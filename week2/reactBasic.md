@@ -1,4 +1,5 @@
 # React の基本
+
 [サンプルプログラム](https://github.com/sekiyan372/react-study-sample/blob/main/src/index.tsx)
 
 ブラウザで React を動作させるには、最低限 `React` と `ReactDOM` という2つのライブラリが必要になります。
@@ -17,6 +18,7 @@ React の話をするにはまず `SPA (Single Page Application)` について�
 React プロジェクトを開始する最も一般的で簡単な方法が `create-react-app` です。この勉強会のサンプルプログラムもこれを元にして作成しています。
 
 自分で試してみたい人は、以下のコマンドでプロジェクトを作成できます。(yarn 環境、typescript はオプション)
+
 ```bash
 $ yarn create react-app [アプリケーション名] --template typescript
 ```

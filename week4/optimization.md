@@ -24,6 +24,7 @@
 コンポーネントをメモ化すると、親のコンポーネントが再レンダリングしても子のコンポーネントの再レンダリングを防ぐことができます。
 
 コンポーネントのメモ化を実装するには、React が提供している `memo` を使用します。使い方は、以下のようにコンポーネントを memo で囲むだけです。
+
 ```typescript
 const Component = memo(() => {})
 ```
@@ -31,6 +32,7 @@ const Component = memo(() => {})
 このように書き加えるだけでこのコンポーネントは Props に変更がない限り再レンダリングされないようになります。
 
 また、以下のように export 時に記述することもできます。
+
 ```typescript
 const Component = () => {}
 
@@ -44,6 +46,7 @@ export default memo(Component)
 これにより、Props で関数を渡したりすると、コンポーネントをメモ化していても再レンダリングが発生してしまうため、関数もメモ化をする必要があります。
 
 関数をメモ化するには `useCallback` という Hook を使用します。useCallback は第1引数に関数、第2引数に依存配列という useEffect と同じような書き方をします。
+
 ```typescript
 const handleClick = useCallback(() => {
   console.log("クリックされました")
@@ -59,6 +62,7 @@ const handleClick = useCallback(() => {
 関数と同じように、コンポーネント内で定義する変数もメモ化することができます。必要性としては関数の時に説明したことと同じなので省略します。
 
 変数をメモ化するには `useMemo` という Hook を使用します。useMemo も useCallback と同じで第1引数に関数、第2引数に依存配列という書き方をして、依存配列によって実行タイミングを操作します。
+
 ```typescript
 const sum = useMemo(() => {
   return 1 + 2

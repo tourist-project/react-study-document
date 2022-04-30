@@ -19,6 +19,7 @@ React ではこのような状態のことを `State` と言い、イベント�
 Hooks は関数とは違うものであり、ただ値を返したりするものではないことを覚えておきましょう。
 
 React Hooks を使用するには React から import をします。
+
 ```typescript
 import { useState } from 'react'
 ```
@@ -28,6 +29,7 @@ import { useState } from 'react'
 React Hooks 中でも State の管理に使うのが `useState` という Hooks です。
 
 useState では状態を保持する変数と、その状態を更新するための関数の2つをセットで定義します。それぞれ、以下のようにして `1つ目に State`、`2つ目に State を更新する関数`を定義します。
+
 ```typescript
 const [num, setNum] = useState()
 ```
@@ -37,6 +39,7 @@ State を更新する関数は `set + State名` にするのが慣習です。
 ### 初期値
 
 useState には初期値を設定することができます。
+
 ```typescript
 const [num, setNum] = useState(0)
 ```
@@ -44,6 +47,7 @@ const [num, setNum] = useState(0)
 ### 型
 
 State には型も設定することができます。型は Generics を使って記述することができます。
+
 ```typescript
 const [num, setNum] = useState<number>(0)
 
@@ -55,6 +59,7 @@ const [bool, setbool] = useState<boolean>(true)
 ### State の更新
 
 2つ目の値に設定した関数を呼び出すことで、Stateを更新することができます。呼び出し時には引数として更新する値を引数として渡すことで、その値に State を更新することができます。
+
 ```typescript
 const [num, setNum] = useState<number>(0)
 

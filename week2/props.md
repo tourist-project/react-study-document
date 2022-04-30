@@ -1,4 +1,5 @@
 # Props
+
 [サンプルプログラム](https://github.com/sekiyan372/react-study-sample/blob/main/src/pages/week2/PropsSample.tsx)
 
 ## Props とは？
@@ -10,6 +11,7 @@ Props を使うことでコンポーネントを動的に使うことができ�
 ## Props の使い方
 
 TypeScript ではまず Props の型を宣言します。
+
 ```typescript
 type Props = {
   ja: string
@@ -20,6 +22,7 @@ type Props = {
 VFC型では `<型名>` をつけることで宣言した型を使用することができます（ここで勘が鋭い人は気づいたかもしれませんが、これが week1 で学んだ Generics の使い方の一つです！）。
 
 そして、引数には props を渡すと、JSXの中で `props.名前` とすることで型宣言した値を使用することができます。
+
 ```typescript
 export const Child: VFC<Props> = (props) => {
   return (
@@ -32,6 +35,7 @@ export const Child: VFC<Props> = (props) => {
 ```
 
 もしくは、引数に `{}` で囲んでそれぞれの値を展開して宣言することもできます。
+
 ```typescript
 export const Child: VFC<Props> = ({ ja, en }) => {
   return (
@@ -44,6 +48,7 @@ export const Child: VFC<Props> = ({ ja, en }) => {
 ```
 
 そして使用する親コンポーネントでは、子コンポーネントを宣言する時に Props を渡します。
+
 ```typescript
 import { Child } from 'パス名'
 
@@ -61,6 +66,7 @@ const Parent: VFC = () => {
 Props には任意の名称を設定してきましたが、それ以外に特別な Props が children です。コンポーネントでも通常のHTMLタグのように要素を囲って使用することができます。この囲まれた部分が children として Props に設定されます。
 
 子コンポーネントでは通常の Props と同じように children を受け取ります。
+
 ```typescript
 const Child = ({ children }) => {
   return (
@@ -70,6 +76,7 @@ const Child = ({ children }) => {
 ```
 
 親コンポーネントでは、HTMLのようにタグの中に children として渡す値を入れます。
+
 ```typescript
 const Parent = () => {
   return (
