@@ -80,19 +80,20 @@ const Parent = () => {
 }
 ```
 
-## FC と VFC の違い
+## FC の children 型の宣言
 
-前のコンポーネントの型の時に FC と VFC があると説明をしましたが、その違いは `FCは暗黙的に children を含み、VFCは含まない` ところになります。要は、VFCでは children を宣言しないと使用できないということです。
+~~前のコンポーネントの型の時に FC と VFC があると説明をしましたが、その違いは `FCは暗黙的に children を含み、VFCは含まない` ところになります。要は、VFCでは children を宣言しないと使用できないということです。~~
 
-それだと FC の方が便利だと思うかもしれませんが、children を使っているかどうか分かりにくいのはよくないとされています。今後リリースされる `React ver18` では FC からも childrenが除外される予定なので、今のうちから children を宣言するように VFC で使い慣れておきましょう。
+~~それだと FC の方が便利だと思うかもしれませんが、children を使っているかどうか分かりにくいのはよくないとされています。今後リリースされる `React ver18` では FC からも childrenが除外される予定なので、今のうちから children を宣言するように VFC で使い慣れておきましょう。~~
+
+React18 以降では FC 型で children を使用するときは型宣言をしないと使えないようになりました。以下のように children は `ReactNode` 型を宣言して使用しましょう。(2022/4/30修正)
 
 ```typescript
-const Child: FC = ({ children }) => <div>{children}</div>  //◯
-const Child: VFC = ({ children }) => <div>{children}</div> //×
+const Child: FC = ({ children }) => <div>{children}</div> //×
 
 //このようにして children を宣言する
 type Props = {
   children: React.ReactNode
 }
-const Child: VFC<Props> = ({ children }) => <div>{children}</div>
+const Child: FC<Props> = ({ children }) => <div>{children}</div>
 ```

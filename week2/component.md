@@ -1,4 +1,5 @@
 # コンポーネント 思考
+
 [サンプルプログラム](https://github.com/sekiyan372/react-study-sample/blob/main/src/pages/week2/ComponentSample.tsx)
 
 ## コンポーネントとは？
@@ -24,6 +25,7 @@
 ## コンポーネントの使い方
 
 コンポーネントはファイルを分けることが多いので、その場合は `export` をします。
+
 ```typescript
 export const Child = () => {
   return (
@@ -38,6 +40,7 @@ export const Child = () => {
 コンポーネントはよく値を渡す方を親、受け取る方を子というようにいいます。
 
 子コンポーネントを親コンポーネントで使用するには `import` して使います。使用する時は import する時に指定した名前を HTML タグのようにして書きます。
+
 ```typescript
 import Child from 'コンポーネントファイルのパス'
 
@@ -55,6 +58,7 @@ const Parent = () => {
 import と export は外部ライブラリやコンポーネンtを使う使用する時に使います。
 
 個別で export した場合、import する時は `{}` で括ってexport したときと同じ名前を使います。名前を変えたい時は `as` を使いましょう。
+
 ```typescript
 export const App = () => //以下省略
 
@@ -76,14 +80,18 @@ import Hoge from "ファイルの場所のパス" //◯
 
 ## コンポーネントの型
 
-React では TypeScript を記述する際にコンポーネントの型というものも用意されています。それが `FC (Function Component)` と `VFC (Void Function Component)` です。二つの違いについては次の Props のページで説明をします。
+React では TypeScript を記述する際にコンポーネントの型というものも用意されています。
+
+~~それが `FC (Function Component)` と `VFC (Void Function Component)` です。二つの違いについては次の Props のページで説明をします。~~
+
+React18 以降では `FC (Function Component)` を使うことが推奨されています。(2022/4/30追記)
 
 コンポーネントの型定義の書き方は以下の通りです。
 ```typescript
 import React from 'react'
-const component: React.VFC = () => //以下省略
+const component: React.FC = () => //以下省略
 
 //もしくは
-import React, { VFC } from 'react'
-const component: VFC = () => //以下省略
+import React, { FC } from 'react'
+const component: FC = () => //以下省略
 ```
