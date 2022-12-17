@@ -21,17 +21,21 @@ Hooks は関数とは違うものであり、ただ値を返したりするも�
 React Hooks を使用するには React から import をします。
 
 ```typescript
-import { useState } from 'react'
+import { useState } from "react";
 ```
 
 ## useState
 
 React Hooks 中でも State の管理に使うのが `useState` という Hooks です。
 
+<<<<<<< HEAD
 useState では状態を保持する変数と、その状態を更新するための関数の2つをセットで定義します。それぞれ、以下のようにして `1つ目に State`、`2つ目に State を更新する関数`を定義します。
+=======
+useState では状態を保持する変数と、その状態を更新するための関数の 2 つをセットで定義します。それぞれ、以下のようにして `1つ目に State`、`2つ目に State を更新する関数`を定義します。
+>>>>>>> upstream/main
 
 ```typescript
-const [num, setNum] = useState()
+const [num, setNum] = useState();
 ```
 
 State を更新する関数は `set + State名` にするのが慣習です。
@@ -41,7 +45,7 @@ State を更新する関数は `set + State名` にするのが慣習です。
 useState には初期値を設定することができます。
 
 ```typescript
-const [num, setNum] = useState(0)
+const [num, setNum] = useState(0);
 ```
 
 ### 型
@@ -49,25 +53,29 @@ const [num, setNum] = useState(0)
 State には型も設定することができます。型は Generics を使って記述することができます。
 
 ```typescript
-const [num, setNum] = useState<number>(0)
+const [num, setNum] = useState<number>(0);
 
-const [text, setText] = useState<string>("text")
+const [text, setText] = useState<string>("text");
 
-const [bool, setbool] = useState<boolean>(true)
+const [bool, setbool] = useState<boolean>(true);
 ```
 
 ### State の更新
 
+<<<<<<< HEAD
 2つ目の値に設定した関数を呼び出すことで、Stateを更新することができます。呼び出し時には引数として更新する値を引数として渡すことで、その値に State を更新することができます。
+=======
+2 つ目の値に設定した関数を呼び出すことで、State を更新することができます。呼び出し時には引数として更新する値を引数として渡すことで、その値に State を更新することができます。
+>>>>>>> upstream/main
 
 ```typescript
-const [num, setNum] = useState<number>(0)
+const [num, setNum] = useState<number>(0);
 
 const addNum = () => {
   // 指定した値に更新
-  setNum(1)
+  setNum(1);
 
   // 現在の State を使用して計算する
-  setNum(num + 1)
-}
+  setNum(num + 1);
+};
 ```

@@ -27,38 +27,38 @@
 
 コンポーネントはファイルを分けることが多いので、その場合は `export` をします。
 
-```typescript
+```tsx
 export const Child = () => {
   return (
     <div>
       <h1>こんにちは</h1>
       <p>お元気ですか</p>
     </div>
-  )
-}
+  );
+};
 ```
 
 コンポーネントはよく値を渡す方を親、受け取る方を子というようにいいます。
 
 子コンポーネントを親コンポーネントで使用するには `import` して使います。使用する時は import する時に指定した名前を HTML タグのようにして書きます。
 
-```typescript
-import Child from 'コンポーネントファイルのパス'
+```tsx
+import Child from "コンポーネントファイルのパス";
 
 const Parent = () => {
   return (
     <>
       <Child />
     </>
-  )
-}
+  );
+};
 ```
 
 ## import / export
 
-import と export は外部ライブラリやコンポーネンtを使う使用する時に使います。
+import と export は外部ライブラリやコンポーネン t を使う使用する時に使います。
 
-個別で export した場合、import する時は `{}` で括ってexport したときと同じ名前を使います。名前を変えたい時は `as` を使いましょう。
+個別で export した場合、import する時は `{}` で括って export したときと同じ名前を使います。名前を変えたい時は `as` を使いましょう。
 
 ```typescript
 export const App = () => //以下省略
@@ -72,29 +72,21 @@ import { App as Hoge } from "ファイルの場所のパス" //asで名前を変
 export のデフォルト値を設定した場合は、そのファイルから出力されるものはデフォルト値のみとなるので、自由な名前をつけることができます（通常は同じ名前を使用します）。
 
 ```typescript
-export default App
+export default App;
 
-import App from "ファイルの場所のパス"  //◯
-import Hoge from "ファイルの場所のパス" //◯
+import App from "ファイルの場所のパス"; //◯
+import Hoge from "ファイルの場所のパス"; //◯
 ```
 
 個別で export をするメリットは、同じファイルに複数の変数や関数、コンポーネントなどを置くことができることです。ですが、同じファイルに export が多くなりすぎるとコードが読みにくくなってしまうので、必要に合わせて export の仕方を変えましょう。
 
 ## コンポーネントの型
 
-React では TypeScript を記述する際にコンポーネントの型というものも用意されています。
-
-~~それが `FC (Function Component)` と `VFC (Void Function Component)` です。二つの違いについては次の Props のページで説明をします。~~
-
-React18 以降では `FC (Function Component)` を使うことが推奨されています。(2022/4/30追記)
+React では TypeScript を記述する際にコンポーネントの型というものも用意されています。それが `FC (Function Component)` です。
 
 コンポーネントの型定義の書き方は以下の通りです。
 
 ```typescript
-import React from 'react'
-const component: React.FC = () => //以下省略
-
-//もしくは
 import React, { FC } from 'react'
 const component: FC = () => //以下省略
 ```
