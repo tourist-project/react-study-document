@@ -19,7 +19,7 @@ type Props = {
 };
 ```
 
-VFC 型では `<型名>` をつけることで宣言した型を使用することができます（ここで勘が鋭い人は気づいたかもしれませんが、これが week1 で学んだ Generics の使い方の一つです！）。
+FC 型では `<型名>` をつけることで宣言した型を使用することができます（ここで勘が鋭い人は気づいたかもしれませんが、これが week1 で学んだ Generics の使い方の一つです！）。
 
 そして、引数には props を渡すと、JSX の中で `props.名前` とすることで型宣言した値を使用することができます。
 
@@ -37,7 +37,7 @@ export const Child: FC<Props> = (props) => {
 もしくは、引数に `{}` で囲んでそれぞれの値を展開して宣言することもできます。
 
 ```tsx
-export const Child: VFC<Props> = ({ ja, en }) => {
+export const Child: FC<Props> = ({ ja, en }) => {
   return (
     <div>
       <p>日本語: {ja}</p>
@@ -96,5 +96,5 @@ const Child: FC = ({ children }) => <div>{children}</div>; //×
 type Props = {
   children: React.ReactNode;
 };
-const Child: VFC<Props> = ({ children }) => <div>{children}</div>;
+const Child: FC<Props> = ({ children }) => <div>{children}</div>;
 ```

@@ -18,11 +18,7 @@ const [num, setNum] = useState<number>(0);
 
 そして、ボタンを押すと onClick イベントで `handleClick` 関数を呼び出しています。
 
-<<<<<<< HEAD
-```typescript
-=======
 ```tsx
->>>>>>> upstream/main
 <Button onClick={() => handleClick(1)}>
   +1
 </Button>
@@ -42,11 +38,7 @@ const handleClick = (value: number) => {
 
 そして、State の値を表示しています。
 
-<<<<<<< HEAD
-```typescript
-=======
 ```tsx
->>>>>>> upstream/main
 <View>count number: {num}</View>
 ```
 
@@ -71,17 +63,8 @@ const [view, setView] = useState<string>("");
 
 フォームを入力すると onChange イベントによって `handleInput`関数が呼び出されます。
 
-<<<<<<< HEAD
-```typescript
-<Input
-  type="text"
-  value={view}
-  onChange={(e) => handleInput(e)}
-/>
-=======
 ```tsx
 <Input type="text" value={view} onChange={(e) => handleInput(e)} />
->>>>>>> upstream/main
 ```
 
 handleInput 関数では State の値を event で発生した値から取り出した入力値に更新しています。
@@ -94,11 +77,7 @@ const handleInput = (event: ChangeEvent<HTMLInputElement>) => {
 
 送信ボタンを押した時には form の onSubmit イベントにより `handleSubmit` 関数を呼び出します。
 
-<<<<<<< HEAD
-```typescript
-=======
 ```tsx
->>>>>>> upstream/main
 <form onSubmit={(e) => handleSubmit(e)}>
 ```
 
@@ -116,15 +95,9 @@ const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
 
 2 行目では、フォームの状態を空の文字列に初期化しています。そして 3 行目でアラートダイアログを表示させています。
 
-<<<<<<< HEAD
-2行目の初期化時に大切なことは、Input の value を State の値に指定していることです。これがなくても form に入力した時の挙動は変わりませんが、リセットするときに form 側に反映されないことをコメントアウトをして確認してみてください。
-
-```typescript
-=======
 2 行目の初期化時に大切なことは、Input の value を State の値に指定していることです。これがなくても form に入力した時の挙動は変わりませんが、リセットするときに form 側に反映されないことをコメントアウトをして確認してみてください。
 
 ```tsx
->>>>>>> upstream/main
 <Input
   ...
   value={view}

@@ -28,11 +28,7 @@ import { useState } from "react";
 
 React Hooks 中でも State の管理に使うのが `useState` という Hooks です。
 
-<<<<<<< HEAD
-useState では状態を保持する変数と、その状態を更新するための関数の2つをセットで定義します。それぞれ、以下のようにして `1つ目に State`、`2つ目に State を更新する関数`を定義します。
-=======
 useState では状態を保持する変数と、その状態を更新するための関数の 2 つをセットで定義します。それぞれ、以下のようにして `1つ目に State`、`2つ目に State を更新する関数`を定義します。
->>>>>>> upstream/main
 
 ```typescript
 const [num, setNum] = useState();
@@ -62,11 +58,7 @@ const [bool, setbool] = useState<boolean>(true);
 
 ### State の更新
 
-<<<<<<< HEAD
-2つ目の値に設定した関数を呼び出すことで、Stateを更新することができます。呼び出し時には引数として更新する値を引数として渡すことで、その値に State を更新することができます。
-=======
 2 つ目の値に設定した関数を呼び出すことで、State を更新することができます。呼び出し時には引数として更新する値を引数として渡すことで、その値に State を更新することができます。
->>>>>>> upstream/main
 
 ```typescript
 const [num, setNum] = useState<number>(0);
